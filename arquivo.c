@@ -1,3 +1,9 @@
+/*=============================================================
+Arquivo de implementação da criação e inicialização do arquivo
+Autores: Willy Kauã, Luis Eduardo, Edmar Miqueiras, Glezier.
+Data: Dezembro de 2025
+===============================================================*/
+
 #include <stdio.h>
 #include "arquivo.h"
 

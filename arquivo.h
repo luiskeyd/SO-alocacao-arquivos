@@ -1,9 +1,15 @@
+/*=============================================================
+Arquivo de especificação da estrutura do arquivo e suas funções
+Autores: Willy Kauã, Luis Eduardo, Edmar Miqueiras, Glezier.
+Data: Dezembro de 2025
+===============================================================*/
+
 #ifndef ARQUIVO_H
 #define ARQUIVO_H
 
 #define MAX_ARQUIVOS 20
 
-typedef enum {
+typedef enum { // tipos de alocação
   CONTIGUA,
   ENCADEADA,
   INDEXADA
@@ -17,6 +23,7 @@ typedef struct {
   int blocos[MAX_ARQUIVOS]; // só pra indexada
 } Arquivo;
 
+// Função para inicializar um arquivo
  extern Arquivo inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo);
 
 #endif
