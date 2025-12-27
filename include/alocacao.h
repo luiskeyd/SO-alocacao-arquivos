@@ -6,6 +6,8 @@ Data: Dezembro de 2025
 
 #ifndef ALOCACAO_H
 #define ALOCACAO_H
+#include "disco.h"
+#include "arquivo.h"
 
 int alocacaoContigua(Bloco disco[], Arquivo *arquivo);
 int alocacaoEncadeada(Bloco disco[], Arquivo *arquivo);

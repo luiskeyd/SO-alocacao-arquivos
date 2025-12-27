@@ -24,6 +24,6 @@ typedef struct {
 } Arquivo;
 
 // Função para inicializar um arquivo
- extern Arquivo inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo);
+ extern Arquivo *inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo);
 
 #endif

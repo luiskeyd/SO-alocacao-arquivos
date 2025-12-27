@@ -22,7 +22,7 @@ void mostrarDisco() {
   printf("Estado do Disco:\n");
   for (int i = 0; i < TAM_DISCO; i++) {
     if (disco[i].ocupado && disco[i].arquivo != NULL) {
-      printf("[%s]\t", disco[i].arquivo->nome);
+      printf("[%c]\t", disco[i].arquivo->nome);
     } else {
       printf("[ ]\t");
     }
