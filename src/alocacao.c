@@ -130,3 +130,60 @@ int alocacaoEncadeada(Bloco disco[], Arquivo *arquivo) {
     arquivo->tipo = ENCADEADA;
     return TRUE;
 }
+
+int removerArquivo(Bloco disco[], Arquivo *arquivo) {
+  if (arquivo == NULL || arquivo->blocoInicial == -1) {
+    return FALSE;
+  }
+
+  switch (arquivo->tipo) {
+
+    case CONTIGUA: {
+      for (int i = arquivo->blocoInicial; i < arquivo->blocoInicial + arquivo->tamanho; i++) {
+        disco[i].ocupado = 0;
+        disco[i].arquivo = NULL;
+      }
+      break;
+    }
+
+    case ENCADEADA: {
+      int atual = arquivo->blocoInicial;
+      while (atual != -1) {
+        int prox = disco[atual].proximo;
+        disco[atual].ocupado = 0;
+        disco[atual].arquivo = NULL;
+        disco[atual].proximo = -1;
+        atual = prox;
+      }
+      break;
+    }
+
+    case INDEXADA: {
+      for (int i = 0; i < arquivo->tamanho; i++) {
+        int bloco = arquivo->blocos[i];
+        if (bloco != -1) {
+          disco[bloco].ocupado = 0;
+          disco[bloco].arquivo = NULL;
+        }
+      }
+
+      int blocoIndice = arquivo->blocoInicial;
+      disco[blocoIndice].ocupado = 0;
+      disco[blocoIndice].arquivo = NULL;
+      break;
+    }
+
+    default:
+      return FALSE;
+  }
+
+  // limpa metadados do arquivo
+  arquivo->blocoInicial = -1;
+  arquivo->tipo = -1;
+  for (int i = 0; i < arquivo->tamanho; i++) {
+    arquivo->blocos[i] = -1;
+  }
+
+  return TRUE;
+}
+

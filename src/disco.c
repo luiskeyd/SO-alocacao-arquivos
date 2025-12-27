@@ -35,3 +35,12 @@ void mostrarDisco() {
   printf("\n");
 }
 
+Arquivo *buscarArquivo(Bloco disco[], char nome) {
+  for (int i = 0; i < TAM_DISCO; i++) {
+    if (disco[i].ocupado && disco[i].arquivo != NULL && disco[i].arquivo->nome == nome) {
+      return disco[i].arquivo;
+    }
+  }
+  return NULL; // arquivo não encontrado
+}
+

@@ -112,7 +112,25 @@ int main() {
                 getchar();
                 break;
             case 3:
-                // Função para remover arquivo
+                printf("Digite o nome do arquivo a ser removido: ");
+                char nomeRemover;
+                scanf("%c", &nomeRemover);
+                getchar();
+                Arquivo *arquivoRemover = buscarArquivo(disco, nomeRemover);
+                if (arquivoRemover == NULL) {
+                    printf("Arquivo '%c' não encontrado no disco.\n", nomeRemover);
+                    getchar();
+                }
+                else {
+                    int removido = removerArquivo(disco, arquivoRemover);
+                    if (removido) {
+                        printf("Arquivo '%c' removido com sucesso!\n", nomeRemover);
+                        free(arquivoRemover); // libera memória do arquivo removido
+                    } else {
+                        printf("Falha ao remover o arquivo '%c'.\n", nomeRemover);
+                    }
+                    getchar();
+                }
                 break;
             case 4:
                 inicializarDisco();

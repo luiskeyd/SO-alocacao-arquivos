@@ -12,5 +12,6 @@ Data: Dezembro de 2025
 int alocacaoContigua(Bloco disco[], Arquivo *arquivo);
 int alocacaoEncadeada(Bloco disco[], Arquivo *arquivo);
 int alocacaoIndexada(Bloco disco[], Arquivo *arquivo);
+int removerArquivo(Bloco disco[], Arquivo *arquivo);
 
 #endif
