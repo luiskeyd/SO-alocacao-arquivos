@@ -13,8 +13,10 @@ typedef struct {
   char nome;
   int tamanho;
   TipoAlocacao tipo;
-  int blocoInicial;
-  int blocos[MAX_ARQUIVOS];
+  int blocoInicial; // só pra encadeada 
+  int blocos[MAX_ARQUIVOS]; // só pra indexada
 } Arquivo;
+
+ extern Arquivo inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo);
 
 #endif

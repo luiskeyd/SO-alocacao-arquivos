@@ -7,6 +7,7 @@
 typedef struct {
   Arquivo *arquivo;
   int ocupado;
+  int proximo; // só pra alocação encadeada
 } Bloco;
 
 extern Bloco disco[TAM_DISCO];
