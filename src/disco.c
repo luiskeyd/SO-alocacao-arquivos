@@ -5,7 +5,7 @@ Data: Dezembro de 2025
 ===============================================================*/
 
 #include <stdio.h>
-#include "disco.h"
+#include "../include/disco.h"
 
 Bloco disco[TAM_DISCO];
 
@@ -13,20 +13,25 @@ void inicializarDisco() {
   for (int i = 0; i < TAM_DISCO; i++) {
     disco[i].ocupado = 0;   // Marcando todo bloco como livre
     disco[i].proximo = -1; // aponta pra -1 pq começa sem apontar pra nada
-    disco[i].arquivo->nome = ' ';
+    disco[i].arquivo = NULL; // nenhum arquivo alocado
   }
 }
 
 void mostrarDisco() {
-  int cont = 0
+  int cont = 0;
   printf("Estado do Disco:\n");
   for (int i = 0; i < TAM_DISCO; i++) {
-    printf("[%c]\t", disco[i].arquivo->nome); 
-    cont
-    if(cont == 10) { // é só pra formatar a saída em tabela
+    if (disco[i].ocupado && disco[i].arquivo != NULL) {
+      printf("[%s]\t", disco[i].arquivo->nome);
+    } else {
+      printf("[ ]\t");
+    }
+    cont++;
+    if (cont == 10) {
       printf("\n");
       cont = 0;
     }
   }
   printf("\n");
 }
+

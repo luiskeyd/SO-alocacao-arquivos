@@ -6,8 +6,8 @@ Data: Dezembro de 2025
 
 #include <stdio.h>
 #include <string.h>
-#include "disco.h"
-#include "arquivo.h"
+#include "../include/disco.h"
+#include "../include/arquivo.h"
 
 #define TRUE 1
 #define FALSE 0
