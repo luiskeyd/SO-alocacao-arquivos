@@ -5,6 +5,7 @@ Data: Dezembro de 2025
 ===============================================================*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "../include/disco.h"
 
 Bloco disco[TAM_DISCO];
@@ -15,6 +16,15 @@ void inicializarDisco() {
     disco[i].proximo = -1; // aponta pra -1 pq começa sem apontar pra nada
     disco[i].arquivo = NULL; // nenhum arquivo alocado
   }
+}
+
+int isEmpty(Bloco disco[]) {
+    for (int i = 0; i < TAM_DISCO; i++) {
+        if (disco[i].ocupado) {
+            return 0; // disco não está vazio
+        }
+    }
+    return 1; // disco está vazio
 }
 
 void mostrarDisco() {

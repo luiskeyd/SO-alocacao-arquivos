@@ -37,7 +37,7 @@ int main() {
     inicializarDisco();
     printf("Iniciando o sistema\n");
     load();
-    printf("Sistema iniciado com sucesso! Pressione qualquer tecla para continuar\n");
+    printf("Sistema iniciado com sucesso! Pressione enter para continuar\n");
     getchar();
     system("clear");
 
@@ -65,7 +65,7 @@ int main() {
                 getchar();
                 break;
             case 2:
-                printf("Digite o nome do arquivo:(uma letra)");
+                printf("Digite o nome do arquivo:(uma letra): ");
                 char nome;
                 scanf("%c", &nome);
                 getchar();
@@ -133,14 +133,27 @@ int main() {
                 }
                 break;
             case 4:
-                inicializarDisco();
-                load();
-                printf("Disco limpo com sucesso!\n");
+                if(isEmpty(disco)) {
+                    printf("O disco já está vazio. Nenhum arquivo para remover.\n");
+                }else {
+                    for(int i = 0; i < TAM_DISCO; i++) {
+                        if(disco[i].ocupado && disco[i].arquivo != NULL) {
+                            removerArquivo(disco, disco[i].arquivo);
+                            free(disco[i].arquivo); // libera memória do arquivo removido
+                        }
+                    }
+                    load();
+                    printf("Disco limpo com sucesso!\n");
+                }
                 getchar();
                 break;
             case 5:
+                if(isEmpty(disco)){
                 flag = 0;
                 printf("Encerrando o sistema. Até mais!\n");
+                }else{
+                    printf("Existem arquivos no disco. Limpe antes de sair\n");
+                }
                 getchar();
                 break;
             default:

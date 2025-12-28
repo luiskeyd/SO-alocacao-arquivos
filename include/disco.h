@@ -21,5 +21,6 @@ extern Bloco disco[TAM_DISCO];
 void inicializarDisco(); // Inicializa o disco, marcando todos os blocos como livres
 void mostrarDisco(); // Mostra o estado atual do disco
 Arquivo *buscarArquivo(Bloco disco[], char nome);
+int isEmpty(Bloco disco[]);
 
 #endif
