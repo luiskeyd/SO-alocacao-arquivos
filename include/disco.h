@@ -1,6 +1,6 @@
 /*=============================================================
 Arquivo de especificação da estrutura do disco e suas funções
-Autores: Willy Kauã, Luis Eduardo, Edmar Miqueiras, Glezier.
+Autores: Willy Kauã, Luis Eduardo, Edmar Miqueias, Glezier Montalvane.
 Data: Dezembro de 2025
 ===============================================================*/
 
@@ -11,9 +11,9 @@ Data: Dezembro de 2025
 #define TAM_DISCO 50  // Tamanho total do disco em blocos
 
 typedef struct {
-  Arquivo *arquivo; // ponteiro para o arquivo alocado no bloco
+  Arquivo *arquivo; // Ponteiro para o arquivo alocado no bloco
   int ocupado; // 0 para livre, 1 para ocupado
-  int proximo; // só pra alocação encadeada
+  int proximo; // Utilizado somente na alocação encadeada
 } Bloco;
 
 extern Bloco disco[TAM_DISCO];

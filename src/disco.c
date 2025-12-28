@@ -13,18 +13,18 @@ Bloco disco[TAM_DISCO];
 void inicializarDisco() {
   for (int i = 0; i < TAM_DISCO; i++) {
     disco[i].ocupado = 0;   // Marcando todo bloco como livre
-    disco[i].proximo = -1; // aponta pra -1 pq começa sem apontar pra nada
-    disco[i].arquivo = NULL; // nenhum arquivo alocado
+    disco[i].proximo = -1; // Aponta pra -1 (nada)
+    disco[i].arquivo = NULL; // Nenhum arquivo alocado
   }
 }
 
 int isEmpty(Bloco disco[]) {
     for (int i = 0; i < TAM_DISCO; i++) {
         if (disco[i].ocupado) {
-            return 0; // disco não está vazio
+            return 0; // Disco não está vazio
         }
     }
-    return 1; // disco está vazio
+    return 1; // Disco está vazio
 }
 
 void mostrarDisco() {
@@ -51,6 +51,5 @@ Arquivo *buscarArquivo(Bloco disco[], char nome) {
       return disco[i].arquivo;
     }
   }
-  return NULL; // arquivo não encontrado
+  return NULL; // Arquivo não encontrado
 }
-

@@ -8,11 +8,12 @@ Data: Dezembro de 2025
 #include <stdlib.h>
 #include "../include/arquivo.h"
 
+// Alocação de um arquivo 
 Arquivo *inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo) {
   Arquivo *arquivo = (Arquivo *) malloc(sizeof(Arquivo));
 
   if (arquivo == NULL) {
-    return NULL; // falha de alocação
+    return NULL; // Falha de alocação
   }
 
   arquivo->nome = nome;
@@ -26,4 +27,3 @@ Arquivo *inicializarArquivo(char nome, int tamanho, TipoAlocacao tipo) {
 
   return arquivo;
 }
-
