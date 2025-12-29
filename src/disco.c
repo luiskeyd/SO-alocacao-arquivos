@@ -1,6 +1,6 @@
 /*=============================================================
 Arquivo de implementação ds funções do disco
-Autores: Willy Kauã, Luis Eduardo, Edmar Miqueiras, Glezier.
+Autores: Willy Kauã, Luis Eduardo, Edmar Miqueias, Glezier.
 Data: Dezembro de 2025
 ===============================================================*/
 

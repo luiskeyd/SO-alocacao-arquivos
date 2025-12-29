@@ -1,6 +1,6 @@
 /*=============================================================
 Arquivo de implementação da criação e inicialização do arquivo
-Autores: Willy Kauã, Luis Eduardo, Edmar Miqueiras, Glezier.
+Autores: Willy Kauã, Luis Eduardo, Edmar Miqueias, Glezier.
 Data: Dezembro de 2025
 ===============================================================*/
 
